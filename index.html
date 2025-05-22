@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Website Analyzer - Professional Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-search-plus"></i>
+                    <h1>Advanced Website Analyzer</h1>
+                </div>
+                <p class="subtitle">Professional Website Analysis & Technology Detection Tool</p>
+                <p class="description">URL တစ်ခုထည့်သွင်းပြီး Website ရဲ့ Technology Stack, Server Info, APIs, Database နှင့် အချက်အလက်အားလုံးကို အသေးစိတ်ကြည့်ရှုပါ</p>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-globe"></i>
+                    <input type="url" id="website-url" placeholder="https://example.com ထည့်သွင်းပါ" required>
+                    <button id="analyze-btn">
+                        <i class="fas fa-search"></i>
+                        <span>စိစစ်ကြည့်ရှုမည်</span>
+                    </button>
+                </div>
+                <div class="quick-examples">
+                    <span>လျင်မြန်စွာ စမ်းကြည့်ရန်:</span>
+                    <button class="example-btn" data-url="https://github.com">GitHub</button>
+                    <button class="example-btn" data-url="https://stackoverflow.com">Stack Overflow</button>
+                    <button class="example-btn" data-url="https://vercel.com">Vercel</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Section -->
+        <section class="loading-section" id="loading-section">
+            <div class="loading-container">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+                <h3>Website ကို စိစစ်နေပါသည်...</h3>
+                <div class="loading-steps">
+                    <div class="step active" id="step-1">
+                        <i class="fas fa-download"></i>
+                        <span>Website Content ရယူနေသည်</span>
+                    </div>
+                    <div class="step" id="step-2">
+                        <i class="fas fa-cogs"></i>
+                        <span>Technology Stack စစ်ဆေးနေသည်</span>
+                    </div>
+                    <div class="step" id="step-3">
+                        <i class="fas fa-server"></i>
+                        <span>Server Information ရယူနေသည်</span>
+                    </div>
+                    <div class="step" id="step-4">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security Analysis လုပ်နေသည်</span>
+                    </div>
+                    <div class="step" id="step-5">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Performance စစ်ဆေးနေသည်</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="results-section">
+            <!-- Website Overview -->
+            <div class="overview-card">
+                <div class="card-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h2>Website Overview</h2>
+                </div>
+                <div class="overview-content" id="overview-content">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Analysis Tabs -->
+            <div class="analysis-tabs">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="technology">
+                        <i class="fas fa-code"></i>
+                        <span>Technology Stack</span>
+                    </button>
+                    <button class="tab-btn" data-tab="server">
+                        <i class="fas fa-server"></i>
+                        <span>Server & Infrastructure</span>
+                    </button>
+                    <button class="tab-btn" data-tab="security">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security Analysis</span>
+                    </button>
+                    <button class="tab-btn" data-tab="performance">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Performance</span>
+                    </button>
+                    <button class="tab-btn" data-tab="seo">
+                        <i class="fas fa-search"></i>
+                        <span>SEO Analysis</span>
+                    </button>
+                    <button class="tab-btn" data-tab="apis">
+                        <i class="fas fa-plug"></i>
+                        <span>APIs & Integrations</span>
+                    </button>
+                    <button class="tab-btn" data-tab="assets">
+                        <i class="fas fa-images"></i>
+                        <span>Assets & Resources</span>
+                    </button>
+                    <button class="tab-btn" data-tab="code">
+                        <i class="fas fa-file-code"></i>
+                        <span>Source Code</span>
+                    </button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="tab-content">
+                    <!-- Technology Stack Tab -->
+                    <div class="tab-pane active" id="technology-tab">
+                        <div class="analysis-grid">
+                            <div class="analysis-card">
+                                <h3><i class="fab fa-js-square"></i> Frontend Technologies</h3>
+                                <div id="frontend-tech" class="tech-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-database"></i> Backend Technologies</h3>
+                                <div id="backend-tech" class="tech-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-cloud"></i> Cloud Services</h3>
+                                <div id="cloud-services" class="tech-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-chart-bar"></i> Analytics & Tracking</h3>
+                                <div id="analytics-tracking" class="tech-list"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Server & Infrastructure Tab -->
+                    <div class="tab-pane" id="server-tab">
+                        <div class="analysis-grid">
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-server"></i> Server Information</h3>
+                                <div id="server-info" class="info-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-network-wired"></i> DNS Information</h3>
+                                <div id="dns-info" class="info-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-certificate"></i> SSL Certificate</h3>
+                                <div id="ssl-info" class="info-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-globe"></i> CDN & Hosting</h3>
+                                <div id="cdn-info" class="info-list"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Analysis Tab -->
+                    <div class="tab-pane" id="security-tab">
+                        <div class="analysis-grid">
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-lock"></i> Security Headers</h3>
+                                <div id="security-headers" class="security-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-shield-virus"></i> Vulnerability Scan</h3>
+                                <div id="vulnerability-scan" class="security-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-user-shield"></i> Privacy & Compliance</h3>
+                                <div id="privacy-compliance" class="security-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-eye"></i> Third-party Trackers</h3>
+                                <div id="third-party-trackers" class="security-list"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Tab -->
+                    <div class="tab-pane" id="performance-tab">
+                        <div class="analysis-grid">
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-stopwatch"></i> Load Times</h3>
+                                <div id="load-times" class="performance-metrics"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-weight"></i> Resource Sizes</h3>
+                                <div id="resource-sizes" class="performance-metrics"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-mobile-alt"></i> Mobile Performance</h3>
+                                <div id="mobile-performance" class="performance-metrics"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-compress"></i> Optimization</h3>
+                                <div id="optimization" class="performance-metrics"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEO Analysis Tab -->
+                    <div class="tab-pane" id="seo-tab">
+                        <div class="analysis-grid">
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-tags"></i> Meta Tags</h3>
+                                <div id="meta-tags" class="seo-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-heading"></i> Content Structure</h3>
+                                <div id="content-structure" class="seo-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-link"></i> Links Analysis</h3>
+                                <div id="links-analysis" class="seo-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-sitemap"></i> Schema & Structured Data</h3>
+                                <div id="schema-data" class="seo-list"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- APIs & Integrations Tab -->
+                    <div class="tab-pane" id="apis-tab">
+                        <div class="analysis-grid">
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-plug"></i> API Endpoints</h3>
+                                <div id="api-endpoints" class="api-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-key"></i> API Keys & Tokens</h3>
+                                <div id="api-keys" class="api-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-share-alt"></i> Social Media APIs</h3>
+                                <div id="social-apis" class="api-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-broadcast-tower"></i> Real-time Connections</h3>
+                                <div id="realtime-connections" class="api-list"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assets & Resources Tab -->
+                    <div class="tab-pane" id="assets-tab">
+                        <div class="analysis-grid">
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-images"></i> Images & Media</h3>
+                                <div id="images-media" class="assets-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-file-code"></i> Scripts & Stylesheets</h3>
+                                <div id="scripts-styles" class="assets-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-font"></i> Fonts & Icons</h3>
+                                <div id="fonts-icons" class="assets-list"></div>
+                            </div>
+                            <div class="analysis-card">
+                                <h3><i class="fas fa-external-link-alt"></i> External Resources</h3>
+                                <div id="external-resources" class="assets-list"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Source Code Tab -->
+                    <div class="tab-pane" id="code-tab">
+                        <div class="code-analysis">
+                            <div class="code-tabs">
+                                <button class="code-tab-btn active" data-code="html">
+                                    <i class="fab fa-html5"></i> HTML
+                                </button>
+                                <button class="code-tab-btn" data-code="css">
+                                    <i class="fab fa-css3-alt"></i> CSS
+                                </button>
+                                <button class="code-tab-btn" data-code="js">
+                                    <i class="fab fa-js-square"></i> JavaScript
+                                </button>
+                            </div>
+                            <div class="code-actions">
+                                <button id="copy-code-btn"><i class="fas fa-copy"></i> Copy</button>
+                                <button id="download-code-btn"><i class="fas fa-download"></i> Download</button>
+                                <button id="format-code-btn"><i class="fas fa-indent"></i> Format</button>
+                            </div>
+                            <div class="code-container">
+                                <pre><code id="source-code"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Error Section -->
+        <section class="error-section" id="error-section">
+            <div class="error-container">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>အမှားရှိနေပါသည်</h3>
+                <p id="error-message"></p>
+                <button id="retry-btn">ထပ်မံကြိုးစားမည်</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Advanced Website Analyzer</h4>
+                    <p>Professional Website Analysis Tool</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Technology Detection</li>
+                        <li>Security Analysis</li>
+                        <li>Performance Monitoring</li>
+                        <li>SEO Analysis</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>မြန်မာဘာသာဖြင့် ဖန်တီးထားသည်</p>
+                    <p>&copy; 2025 All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
